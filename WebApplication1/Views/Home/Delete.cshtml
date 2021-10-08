@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.FileModel>
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deleted Files</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Extention)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Extention)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</a>
